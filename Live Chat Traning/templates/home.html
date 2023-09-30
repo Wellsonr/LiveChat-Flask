@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" class='buttons'>
+    <h3 class='mt-3'>Chat App</h3>
+    <div>
+    <label>Name:</label>
+    <input type="text" name='name' placeholder="Pick a name" value='{{name}}'>
+    </div>
+    <div class="join">
+        <input type="text" placeholder="Enter The Room Code" name='code' value='{{code}}'>
+        <button type='submit' name='join'>Join</button>
+    </div>
+    <button type="submit" name='create' class="create-btn">Create a Room</button>
+    {% if error %}
+    <div class='col mt-3'>
+        <i class="bi bi-window-x"></i>
+        <strong class='font-weight-bold pl-2'>{{error}}</strong>
+    </div>  
+    {% endif %}
+</form>
+
+{% endblock %}
